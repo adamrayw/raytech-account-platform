@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# RayTech Account
 
-## Getting Started
+Production-ready authentication platform for the RayTech ecosystem.
 
-First, run the development server:
+## Stack
+
+- Next.js 16 (App Router)
+- TypeScript
+- PostgreSQL
+- Prisma
+- Better Auth
+- Tailwind CSS
+- Zod + React Hook Form
+
+## What This App Provides
+
+- Email/password registration and login
+- Secure logout
+- Session-based auth with HttpOnly cookies
+- Cross-subdomain cookie strategy for `*.raytech.cloud`
+- `GET /api/me` profile endpoint for FlowNote, FlowPaste, and future products
+- Device session tracking (`/api/sessions` + dashboard view)
+- Server-side route protection + optimistic proxy redirects
+- Modern SaaS dashboard with product launcher cards
+
+## Domains
+
+- `auth.raytech.cloud`
+- `flownote.raytech.cloud`
+- `flowpaste.raytech.cloud`
+- `flowtask.raytech.cloud`
+- `flowcv.raytech.cloud`
+
+## Quick Start
+
+1. Install dependencies
+
+```bash
+npm install
+```
+
+2. Configure environment
+
+```bash
+cp .env.example .env
+```
+
+Windows PowerShell:
+
+```powershell
+Copy-Item .env.example .env
+```
+
+3. Generate Prisma client
+
+```bash
+npm run prisma:generate
+```
+
+4. Run migrations
+
+```bash
+npm run prisma:migrate
+```
+
+5. Start development
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Environment Variables
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Ready-to-use templates:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `.env.development.example`
+- `.env.staging.example`
+- `.env.production.example`
+- `.env.example` (default base)
 
-## Learn More
+Recommended flow:
 
-To learn more about Next.js, take a look at the following resources:
+1. Copy the right template to `.env`
+2. Fill real credentials/secrets
+3. Keep `BETTER_AUTH_SECRET` high-entropy (>=32 chars)
+4. Keep `COOKIE_NAME=raytech_session` for cross-product consistency
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Required core keys:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- `DATABASE_URL`
+- `BETTER_AUTH_SECRET`
+- `BETTER_AUTH_URL`
+- `COOKIE_DOMAIN`
+- `COOKIE_NAME`
 
-## Deploy on Vercel
+## API
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### `GET /api/me`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Returns authenticated user profile:
+
+```json
+{
+  "id": "...",
+  "name": "...",
+  "email": "..."
+}
+```
+
+### `GET /api/sessions`
+
+Returns active session/device list for the current user.
+
+## SSO Integration Guide
+
+See [docs/sso-integration.md](docs/sso-integration.md).
+
+## Future Extension Hooks
+
+Architecture is prepared for:
+
+- OAuth providers (Google/GitHub)
+- Teams and organizations
+- Product subscriptions
+- Billing integration
+
+No major auth refactor is required to add these features.
