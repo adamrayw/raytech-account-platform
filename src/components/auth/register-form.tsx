@@ -78,7 +78,13 @@ export function RegisterForm({ returnTo }: RegisterFormProps) {
       return;
     }
 
-    router.push(returnTo ?? "/dashboard");
+    const target = returnTo ?? "/dashboard";
+    if (/^https?:\/\//i.test(target)) {
+      window.location.assign(target);
+      return;
+    }
+
+    router.push(target);
     router.refresh();
   });
 

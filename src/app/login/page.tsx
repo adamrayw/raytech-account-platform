@@ -9,14 +9,35 @@ type LoginPageProps = {
   searchParams: Promise<{ returnTo?: string }>;
 };
 
+function isSafeReturnTo(returnTo?: string) {
+  if (!returnTo) {
+    return false;
+  }
+
+  try {
+    const target = new URL(returnTo);
+    if (target.protocol !== "https:" && target.protocol !== "http:") {
+      return false;
+    }
+
+    if (target.hostname === "localhost" || target.hostname === "127.0.0.1") {
+      return true;
+    }
+
+    return target.hostname.endsWith(".raytech.cloud");
+  } catch {
+    return false;
+  }
+}
+
 export default async function LoginPage({ searchParams }: LoginPageProps) {
+  const params = await searchParams;
+  const safeReturnTo = isSafeReturnTo(params.returnTo) ? params.returnTo : undefined;
   const session = await getSessionOrNull();
 
   if (session) {
-    redirect("/dashboard");
+    redirect(safeReturnTo ?? "/dashboard");
   }
-
-  const params = await searchParams;
 
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 px-6 py-8 text-zinc-100 sm:px-8">
@@ -29,7 +50,7 @@ export default async function LoginPage({ searchParams }: LoginPageProps) {
             <p className="text-sm text-zinc-400">Sign in once to access every RayTech product.</p>
           </div>
 
-          <LoginForm returnTo={params.returnTo} />
+          <LoginForm returnTo={safeReturnTo} />
 
           <div className="text-center text-xs text-zinc-500">
             <Link className="hover:text-zinc-300" href="/">
