@@ -6,6 +6,18 @@ const cookieName = process.env.COOKIE_NAME || "raytech_session";
 const protectedPaths = ["/dashboard"];
 const guestOnlyPaths = ["/login", "/register"];
 
+function isAllowedReturnTo(url: URL) {
+  if (url.protocol !== "https:" && url.protocol !== "http:") {
+    return false;
+  }
+
+  if (url.hostname === "localhost" || url.hostname === "127.0.0.1") {
+    return true;
+  }
+
+  return url.hostname.endsWith(".raytech.cloud");
+}
+
 export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const sessionCookie = getSessionCookie(request, { cookieName });
@@ -20,6 +32,19 @@ export function proxy(request: NextRequest) {
   }
 
   if (sessionCookie && isGuestOnlyPath) {
+    const returnTo = request.nextUrl.searchParams.get("returnTo");
+
+    if (returnTo) {
+      try {
+        const target = new URL(returnTo);
+        if (isAllowedReturnTo(target)) {
+          return NextResponse.redirect(target);
+        }
+      } catch {
+        // ignore invalid returnTo and fallback to local dashboard
+      }
+    }
+
     return NextResponse.redirect(new URL("/dashboard", request.url));
   }
 
