@@ -38,7 +38,7 @@ export default function HomePage() {
               One RayTech account. Every product unlocked.
             </h2>
             <p className="max-w-xl text-lg text-zinc-300/90">
-              RayTech Account powers secure authentication across FlowNote, FlowPaste, and every product in the ecosystem.
+              RayTech Account powers secure authentication across FlowNote, FlowPaste, FlowSummary, and every product in the ecosystem.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -65,6 +65,10 @@ export default function HomePage() {
               </div>
               <div className="rounded-xl border border-emerald-300/30 bg-emerald-400/10 p-3">
                 <p className="font-medium">FlowPaste</p>
+                <p className="text-xs text-emerald-200/90">Live</p>
+              </div>
+              <div className="rounded-xl border border-emerald-300/30 bg-emerald-400/10 p-3">
+                <p className="font-medium">FlowSummary</p>
                 <p className="text-xs text-emerald-200/90">Live</p>
               </div>
               <div className="rounded-xl border border-amber-300/30 bg-amber-400/10 p-3">

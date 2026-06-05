@@ -53,6 +53,13 @@ export default async function DashboardPage() {
               href={getProductUrl("flowpaste")}
             />
             <ProductCard
+              icon="✨"
+              title="FlowSummary"
+              description="Generate professional summaries and reports with AI."
+              status="Live"
+              href={getProductUrl("flowsummary")}
+            />
+            <ProductCard
               icon="📋"
               title="FlowTask"
               description="Plan tasks and projects with your team."

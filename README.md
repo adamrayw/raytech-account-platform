@@ -28,6 +28,7 @@ Production-ready authentication platform for the RayTech ecosystem.
 - `auth.raytech.cloud`
 - `flownote.raytech.cloud`
 - `flowpaste.raytech.cloud`
+- `flowsummary.raytech.cloud`
 - `flowtask.raytech.cloud`
 - `flowcv.raytech.cloud`
 

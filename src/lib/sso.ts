@@ -3,12 +3,14 @@ import { publicEnv } from "@/lib/env.public";
 export type RayTechProduct =
   | "flownote"
   | "flowpaste"
+  | "flowsummary"
   | "flowtask"
   | "flowcv";
 
 const productMap: Record<RayTechProduct, string> = {
   flownote: publicEnv.NEXT_PUBLIC_FLOWNOTE_URL,
   flowpaste: publicEnv.NEXT_PUBLIC_FLOWPASTE_URL,
+  flowsummary: publicEnv.NEXT_PUBLIC_FLOWSUMMARY_URL,
   flowtask: publicEnv.NEXT_PUBLIC_FLOWTASK_URL,
   flowcv: publicEnv.NEXT_PUBLIC_FLOWCV_URL,
 };
