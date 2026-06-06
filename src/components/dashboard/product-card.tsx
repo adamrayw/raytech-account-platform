@@ -20,8 +20,8 @@ export function ProductCard({ icon, title, description, status, href }: ProductC
         <span
           className={
             status === "Live"
-              ? "rounded-full bg-emerald-400/15 px-2 py-1 text-xs text-emerald-300"
-              : "rounded-full bg-amber-400/15 px-2 py-1 text-xs text-amber-300"
+              ? "rounded-full bg-[#8B5CF6]/15 px-2 py-1 text-xs text-[#A855F7]"
+              : "rounded-full bg-[#A855F7]/10 px-2 py-1 text-xs text-[#A855F7]/80"
           }
         >
           {status}
@@ -36,7 +36,7 @@ export function ProductCard({ icon, title, description, status, href }: ProductC
       {href ? (
         <Link
           href={href}
-          className="mt-auto inline-flex h-10 items-center justify-center rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 text-sm font-medium text-cyan-200 transition hover:bg-cyan-300/20"
+          className="mt-auto inline-flex h-10 items-center justify-center rounded-lg border border-[#A855F7]/30 bg-[#8B5CF6]/10 px-3 text-sm font-medium text-[#A855F7] transition hover:bg-[#A855F7]/20"
         >
           Open Product
         </Link>
@@ -52,3 +52,5 @@ export function ProductCard({ icon, title, description, status, href }: ProductC
     </Card>
   );
 }
+
+

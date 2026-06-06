@@ -143,10 +143,12 @@ export function RegisterForm({ returnTo }: RegisterFormProps) {
 
       <p className="text-center text-sm text-zinc-400">
         Already have an account?{" "}
-        <Link className="text-cyan-300 hover:text-cyan-200" href={returnTo ? `/login?returnTo=${encodeURIComponent(returnTo)}` : "/login"}>
+        <Link className="text-[#A855F7] hover:text-[#A855F7]" href={returnTo ? `/login?returnTo=${encodeURIComponent(returnTo)}` : "/login"}>
           Sign in
         </Link>
       </p>
     </form>
   );
 }
+
+

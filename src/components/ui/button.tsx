@@ -4,11 +4,11 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex h-11 items-center justify-center rounded-xl px-4 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/40 disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex h-11 items-center justify-center rounded-xl px-4 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8B5CF6]/40 disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-cyan-400 text-zinc-950 hover:bg-cyan-300",
+        default: "bg-[#8B5CF6] text-white hover:bg-[#A855F7]",
         secondary: "bg-white/10 text-zinc-100 hover:bg-white/15",
         ghost: "text-zinc-200 hover:bg-white/10",
         outline: "border border-white/15 bg-transparent text-zinc-100 hover:bg-white/5",
@@ -36,3 +36,4 @@ export function Button({ className, variant, size, ...props }: ButtonProps) {
 }
 
 export { buttonVariants };
+

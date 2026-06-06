@@ -39,7 +39,7 @@ export function ProfileMenu({ name, email }: ProfileMenuProps) {
   return (
     <details className="relative">
       <summary className="flex cursor-pointer list-none items-center gap-3 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-left text-sm text-zinc-200 transition hover:bg-white/10">
-        <span className="flex size-8 items-center justify-center rounded-full bg-cyan-400/20 text-xs font-semibold text-cyan-200">
+        <span className="flex size-8 items-center justify-center rounded-full bg-[#8B5CF6]/20 text-xs font-semibold text-[#A855F7]">
           {initials}
         </span>
         <span className="hidden sm:block">
@@ -63,3 +63,5 @@ export function ProfileMenu({ name, email }: ProfileMenuProps) {
     </details>
   );
 }
+
+

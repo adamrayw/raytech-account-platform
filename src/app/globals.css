@@ -4,7 +4,9 @@
   --background: #05070d;
   --foreground: #edf2f7;
   --muted: #94a3b8;
-  --ring: #22d3ee;
+  --primary: #8b5cf6;
+  --secondary: #a855f7;
+  --ring: #8b5cf6;
   --radius: 0.85rem;
   --font-sans: var(--font-manrope);
   --font-mono: var(--font-jetbrains-mono);
@@ -14,6 +16,8 @@
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
   --color-ring: var(--ring);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);

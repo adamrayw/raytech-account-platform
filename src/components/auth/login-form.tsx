@@ -115,10 +115,12 @@ export function LoginForm({ returnTo }: LoginFormProps) {
 
       <p className="text-center text-sm text-zinc-400">
         New to RayTech?{" "}
-        <Link className="text-cyan-300 hover:text-cyan-200" href={returnTo ? `/register?returnTo=${encodeURIComponent(returnTo)}` : "/register"}>
+        <Link className="text-[#A855F7] hover:text-[#A855F7]" href={returnTo ? `/register?returnTo=${encodeURIComponent(returnTo)}` : "/register"}>
           Create account
         </Link>
       </p>
     </form>
   );
 }
+
+

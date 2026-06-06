@@ -1,5 +1,6 @@
 import { headers } from "next/headers";
 
+import { RayTechAccountLogo } from "@/components/brand/raytech-account-logo";
 import { ProductCard } from "@/components/dashboard/product-card";
 import { ProfileMenu } from "@/components/dashboard/profile-menu";
 import { Card } from "@/components/ui/card";
@@ -28,7 +29,7 @@ export default async function DashboardPage() {
       <div className="mx-auto w-full max-w-6xl space-y-8">
         <header className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-gradient-to-r from-white/10 to-white/[0.02] p-6 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">RayTech Account</p>
+            <RayTechAccountLogo className="mb-4 h-12 w-auto" priority />
             <h1 className="mt-1 text-2xl font-semibold">Welcome back, {session.user.name}</h1>
             <p className="mt-1 text-sm text-zinc-400">Your account is active across the RayTech ecosystem.</p>
           </div>
@@ -101,7 +102,7 @@ export default async function DashboardPage() {
           <Card className="space-y-3">
             <div className="flex items-center justify-between">
               <h3 className="text-lg font-semibold">Active Sessions</h3>
-              <span className="rounded-full bg-cyan-400/15 px-2 py-1 text-xs text-cyan-200">
+              <span className="rounded-full bg-[#8B5CF6]/15 px-2 py-1 text-xs text-[#A855F7]">
                 {deviceSessions.length} device{deviceSessions.length === 1 ? "" : "s"}
               </span>
             </div>
@@ -122,3 +123,5 @@ export default async function DashboardPage() {
     </main>
   );
 }
+
+

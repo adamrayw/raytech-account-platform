@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { RayTechAccountLogo } from "@/components/brand/raytech-account-logo";
 import { Card } from "@/components/ui/card";
 
 const features = [
@@ -11,20 +12,17 @@ const features = [
 export default function HomePage() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-zinc-950 text-zinc-100">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(34,211,238,0.22),transparent_42%),radial-gradient(circle_at_80%_0%,rgba(99,102,241,0.2),transparent_36%)]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(139,92,246,0.26),transparent_42%),radial-gradient(circle_at_80%_0%,rgba(168,85,247,0.22),transparent_36%)]" />
       <div className="relative mx-auto flex min-h-screen w-full max-w-6xl flex-col px-6 py-8 sm:px-8">
         <header className="flex items-center justify-between">
-          <div>
-            <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">RayTech</p>
-            <h1 className="text-xl font-semibold">RayTech Account</h1>
-          </div>
+          <RayTechAccountLogo className="h-14 w-auto" priority />
           <div className="flex items-center gap-3">
             <Link href="/login" className="rounded-lg px-3 py-2 text-sm text-zinc-300 hover:bg-white/5">
               Sign in
             </Link>
             <Link
               href="/register"
-              className="rounded-lg border border-cyan-300/30 bg-cyan-300/10 px-3 py-2 text-sm font-medium text-cyan-100 hover:bg-cyan-300/20"
+              className="rounded-lg border border-[#A855F7]/30 bg-[#8B5CF6]/10 px-3 py-2 text-sm font-medium text-[#F5F3FF] hover:bg-[#A855F7]/20"
             >
               Create account
             </Link>
@@ -43,7 +41,7 @@ export default function HomePage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/register"
-                className="inline-flex h-11 items-center justify-center rounded-xl bg-cyan-400 px-5 text-sm font-medium text-zinc-950 hover:bg-cyan-300"
+                className="inline-flex h-11 items-center justify-center rounded-xl bg-[#8B5CF6] px-5 text-sm font-medium text-white hover:bg-[#A855F7]"
               >
                 Start with RayTech Account
               </Link>
@@ -59,31 +57,31 @@ export default function HomePage() {
           <Card className="space-y-4">
             <h3 className="text-lg font-semibold">Connected products</h3>
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-xl border border-emerald-300/30 bg-emerald-400/10 p-3">
+              <div className="rounded-xl border border-[#A855F7]/30 bg-[#8B5CF6]/10 p-3">
                 <p className="font-medium">FlowNote</p>
-                <p className="text-xs text-emerald-200/90">Live</p>
+                <p className="text-xs text-[#A855F7]">Live</p>
               </div>
-              <div className="rounded-xl border border-emerald-300/30 bg-emerald-400/10 p-3">
+              <div className="rounded-xl border border-[#A855F7]/30 bg-[#8B5CF6]/10 p-3">
                 <p className="font-medium">FlowPaste</p>
-                <p className="text-xs text-emerald-200/90">Live</p>
+                <p className="text-xs text-[#A855F7]">Live</p>
               </div>
-              <div className="rounded-xl border border-emerald-300/30 bg-emerald-400/10 p-3">
+              <div className="rounded-xl border border-[#A855F7]/30 bg-[#8B5CF6]/10 p-3">
                 <p className="font-medium">FlowSummary</p>
-                <p className="text-xs text-emerald-200/90">Live</p>
+                <p className="text-xs text-[#A855F7]">Live</p>
               </div>
-              <div className="rounded-xl border border-amber-300/30 bg-amber-400/10 p-3">
+              <div className="rounded-xl border border-[#A855F7]/20 bg-[#A855F7]/5 p-3">
                 <p className="font-medium">FlowTask</p>
-                <p className="text-xs text-amber-200/90">Coming Soon</p>
+                <p className="text-xs text-[#A855F7]/80">Coming Soon</p>
               </div>
-              <div className="rounded-xl border border-amber-300/30 bg-amber-400/10 p-3">
+              <div className="rounded-xl border border-[#A855F7]/20 bg-[#A855F7]/5 p-3">
                 <p className="font-medium">FlowCV</p>
-                <p className="text-xs text-amber-200/90">Coming Soon</p>
+                <p className="text-xs text-[#A855F7]/80">Coming Soon</p>
               </div>
             </div>
             <ul className="space-y-2 pt-2 text-sm text-zinc-300">
               {features.map((feature) => (
                 <li key={feature} className="flex items-start gap-2">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-cyan-300" />
+                  <span className="mt-1 h-2 w-2 rounded-full bg-[#A855F7]" />
                   <span>{feature}</span>
                 </li>
               ))}
@@ -94,3 +92,4 @@ export default function HomePage() {
     </main>
   );
 }
+
