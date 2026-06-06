@@ -11,10 +11,10 @@ export function RayTechAccountLogo({
 }: RayTechAccountLogoProps) {
   return (
     <Image
-      src="/brand/raytech-account-logo.png"
+      src="/brand/raytech-account-icon.png"
       alt="RayTech Account"
-      width={640}
-      height={240}
+      width={560}
+      height={560}
       className={className}
       priority={priority}
     />
