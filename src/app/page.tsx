@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { RayTechAccountLogo } from "@/components/brand/raytech-account-logo";
 import { Card } from "@/components/ui/card";
@@ -7,6 +8,13 @@ const features = [
   "One account for all RayTech products",
   "Secure session and device tracking",
   "Ready for OAuth, teams, and billing expansion",
+];
+
+const connectedProducts = [
+  { name: "FlowNote", iconSrc: "/products/flownote-logo.png" },
+  { name: "FlowPaste", iconSrc: "/products/flowpaste-logo.png" },
+  { name: "FlowSummary", iconSrc: "/products/flowsummary-logo.png" },
+  { name: "FlowSign", iconSrc: "/products/flowsign-logo.png" },
 ];
 
 export default function HomePage() {
@@ -36,7 +44,7 @@ export default function HomePage() {
               One RayTech account. Every product unlocked.
             </h2>
             <p className="max-w-xl text-lg text-zinc-300/90">
-              RayTech Account powers secure authentication across FlowNote, FlowPaste, FlowSummary, and every product in the ecosystem.
+              RayTech Account powers secure authentication across FlowNote, FlowPaste, FlowSummary, FlowSign, and every product in the ecosystem.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link
@@ -57,26 +65,19 @@ export default function HomePage() {
           <Card className="space-y-4">
             <h3 className="text-lg font-semibold">Connected products</h3>
             <div className="grid grid-cols-2 gap-3">
-              <div className="rounded-xl border border-[#A855F7]/30 bg-[#8B5CF6]/10 p-3">
-                <p className="font-medium">FlowNote</p>
-                <p className="text-xs text-[#A855F7]">Live</p>
-              </div>
-              <div className="rounded-xl border border-[#A855F7]/30 bg-[#8B5CF6]/10 p-3">
-                <p className="font-medium">FlowPaste</p>
-                <p className="text-xs text-[#A855F7]">Live</p>
-              </div>
-              <div className="rounded-xl border border-[#A855F7]/30 bg-[#8B5CF6]/10 p-3">
-                <p className="font-medium">FlowSummary</p>
-                <p className="text-xs text-[#A855F7]">Live</p>
-              </div>
-              <div className="rounded-xl border border-[#A855F7]/20 bg-[#A855F7]/5 p-3">
-                <p className="font-medium">FlowTask</p>
-                <p className="text-xs text-[#A855F7]/80">Coming Soon</p>
-              </div>
-              <div className="rounded-xl border border-[#A855F7]/20 bg-[#A855F7]/5 p-3">
-                <p className="font-medium">FlowCV</p>
-                <p className="text-xs text-[#A855F7]/80">Coming Soon</p>
-              </div>
+              {connectedProducts.map((product) => (
+                <div key={product.name} className="rounded-xl border border-[#A855F7]/30 bg-[#8B5CF6]/10 p-3">
+                  <Image
+                    src={product.iconSrc}
+                    alt={`${product.name} logo`}
+                    width={40}
+                    height={40}
+                    className="mb-3 size-10 rounded-xl object-cover"
+                  />
+                  <p className="font-medium">{product.name}</p>
+                  <p className="text-xs text-[#A855F7]">Live</p>
+                </div>
+              ))}
             </div>
             <ul className="space-y-2 pt-2 text-sm text-zinc-300">
               {features.map((feature) => (

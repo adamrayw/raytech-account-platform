@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     template: "%s | RayTech Account",
   },
   description:
-    "Single Sign-On account platform for the RayTech ecosystem: FlowNote, FlowPaste, FlowSummary, FlowTask, and FlowCV.",
+    "Single Sign-On account platform for the RayTech ecosystem: FlowNote, FlowPaste, FlowSummary, FlowSign, FlowTask, and FlowCV.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_AUTH_URL || "http://localhost:3000"),
   icons: {
     icon: [

@@ -15,7 +15,7 @@ const defaultDevEnv = {
   DATABASE_URL: "postgresql://postgres:postgres@localhost:5432/raytech_account?schema=public",
   BETTER_AUTH_SECRET: "replace-with-32-plus-char-secret-for-local-dev",
   BETTER_AUTH_URL: "http://localhost:3000",
-  TRUSTED_ORIGINS: "http://localhost:3000,http://localhost:3001,http://localhost:3002",
+  TRUSTED_ORIGINS: "http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3005,http://localhost:3006",
   COOKIE_DOMAIN: ".raytech.cloud",
   COOKIE_NAME: "raytech_session",
 };

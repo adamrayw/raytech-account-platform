@@ -18,7 +18,7 @@ Production-ready authentication platform for the RayTech ecosystem.
 - Secure logout
 - Session-based auth with HttpOnly cookies
 - Cross-subdomain cookie strategy for `*.raytech.cloud`
-- `GET /api/me` profile endpoint for FlowNote, FlowPaste, and future products
+- `GET /api/me` profile endpoint for RayTech products
 - Device session tracking (`/api/sessions` + dashboard view)
 - Server-side route protection + optimistic proxy redirects
 - Modern SaaS dashboard with product launcher cards
@@ -29,6 +29,7 @@ Production-ready authentication platform for the RayTech ecosystem.
 - `flownote.raytech.cloud`
 - `flowpaste.raytech.cloud`
 - `flowsummary.raytech.cloud`
+- `flowsign.raytech.cloud`
 - `flowtask.raytech.cloud`
 - `flowcv.raytech.cloud`
 

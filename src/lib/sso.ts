@@ -4,6 +4,7 @@ export type RayTechProduct =
   | "flownote"
   | "flowpaste"
   | "flowsummary"
+  | "flowsign"
   | "flowtask"
   | "flowcv";
 
@@ -11,6 +12,7 @@ const productMap: Record<RayTechProduct, string> = {
   flownote: publicEnv.NEXT_PUBLIC_FLOWNOTE_URL,
   flowpaste: publicEnv.NEXT_PUBLIC_FLOWPASTE_URL,
   flowsummary: publicEnv.NEXT_PUBLIC_FLOWSUMMARY_URL,
+  flowsign: publicEnv.NEXT_PUBLIC_FLOWSIGN_URL,
   flowtask: publicEnv.NEXT_PUBLIC_FLOWTASK_URL,
   flowcv: publicEnv.NEXT_PUBLIC_FLOWCV_URL,
 };

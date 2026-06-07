@@ -1,28 +1,30 @@
 import Link from "next/link";
+import Image from "next/image";
 
 import { Card } from "@/components/ui/card";
 
 type ProductCardProps = {
   icon: string;
+  iconSrc?: string;
   title: string;
   description: string;
-  status: "Live" | "Coming Soon";
-  href?: string;
+  status: "Live";
+  href: string;
 };
 
-export function ProductCard({ icon, title, description, status, href }: ProductCardProps) {
+export function ProductCard({ icon, iconSrc, title, description, status, href }: ProductCardProps) {
   return (
     <Card className="flex h-full flex-col gap-4">
       <div className="flex items-center justify-between">
-        <div className="text-2xl" aria-hidden="true">
-          {icon}
-        </div>
+        {iconSrc ? (
+          <Image src={iconSrc} alt={`${title} logo`} width={32} height={32} className="size-8 rounded-lg object-cover" />
+        ) : (
+          <div className="text-2xl" aria-hidden="true">
+            {icon}
+          </div>
+        )}
         <span
-          className={
-            status === "Live"
-              ? "rounded-full bg-[#8B5CF6]/15 px-2 py-1 text-xs text-[#A855F7]"
-              : "rounded-full bg-[#A855F7]/10 px-2 py-1 text-xs text-[#A855F7]/80"
-          }
+          className="rounded-full bg-[#8B5CF6]/15 px-2 py-1 text-xs text-[#A855F7]"
         >
           {status}
         </span>
@@ -33,22 +35,12 @@ export function ProductCard({ icon, title, description, status, href }: ProductC
         <p className="text-sm text-zinc-400">{description}</p>
       </div>
 
-      {href ? (
-        <Link
-          href={href}
-          className="mt-auto inline-flex h-10 items-center justify-center rounded-lg border border-[#A855F7]/30 bg-[#8B5CF6]/10 px-3 text-sm font-medium text-[#A855F7] transition hover:bg-[#A855F7]/20"
-        >
-          Open Product
-        </Link>
-      ) : (
-        <button
-          type="button"
-          disabled
-          className="mt-auto inline-flex h-10 items-center justify-center rounded-lg border border-white/10 px-3 text-sm font-medium text-zinc-500"
-        >
-          Coming Soon
-        </button>
-      )}
+      <Link
+        href={href}
+        className="mt-auto inline-flex h-10 items-center justify-center rounded-lg border border-[#A855F7]/30 bg-[#8B5CF6]/10 px-3 text-sm font-medium text-[#A855F7] transition hover:bg-[#A855F7]/20"
+      >
+        Open Product
+      </Link>
     </Card>
   );
 }

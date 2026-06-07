@@ -41,6 +41,7 @@ export default async function DashboardPage() {
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             <ProductCard
               icon="📝"
+              iconSrc="/products/flownote-logo.png"
               title="FlowNote"
               description="AI-powered notes for focused work."
               status="Live"
@@ -48,6 +49,7 @@ export default async function DashboardPage() {
             />
             <ProductCard
               icon="📄"
+              iconSrc="/products/flowpaste-logo.png"
               title="FlowPaste"
               description="Share code and text with secure links."
               status="Live"
@@ -55,22 +57,19 @@ export default async function DashboardPage() {
             />
             <ProductCard
               icon="✨"
+              iconSrc="/products/flowsummary-logo.png"
               title="FlowSummary"
               description="Generate professional summaries and reports with AI."
               status="Live"
               href={getProductUrl("flowsummary")}
             />
             <ProductCard
-              icon="📋"
-              title="FlowTask"
-              description="Plan tasks and projects with your team."
-              status="Coming Soon"
-            />
-            <ProductCard
-              icon="👤"
-              title="FlowCV"
-              description="Build professional resumes and portfolios."
-              status="Coming Soon"
+              icon="✍️"
+              iconSrc="/products/flowsign-logo.png"
+              title="FlowSign"
+              description="Sign PDF documents with local-first workflows."
+              status="Live"
+              href={getProductUrl("flowsign")}
             />
           </div>
         </section>

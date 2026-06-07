@@ -4,7 +4,7 @@ Use `auth.raytech.cloud` as the single identity provider for all RayTech apps.
 
 ## Product Flow
 
-1. User opens product app (`flownote.raytech.cloud`, `flowpaste.raytech.cloud`).
+1. User opens product app (`flownote.raytech.cloud`, `flowpaste.raytech.cloud`, `flowsummary.raytech.cloud`, `flowsign.raytech.cloud`).
 2. Product calls `GET https://auth.raytech.cloud/api/me` with `credentials: "include"`.
 3. If `401`, redirect user to `https://auth.raytech.cloud/login?returnTo=<current-url>`.
 4. If `200`, store only `user.id` in product data models.
